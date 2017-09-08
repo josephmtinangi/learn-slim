@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Interop\Container\ContainerInterface;
 use Slim\Views\Twig;
 use function DI\get;
@@ -17,5 +18,8 @@ return [
         ));
 
         return $twig;
+    },
+    User::class => function (ContainerInterface $c) {
+        return new User;
     }
 ];
