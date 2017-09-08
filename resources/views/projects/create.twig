@@ -1,0 +1,32 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                <div class="card">
+                    <div class="card-header">
+                        CREATE NEW PROJECT
+                    </div>
+                    <div class="card-body">
+
+                        <form action="{{ path_for('projects.store') }}" method="POST">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" name="name" id="name" class="form-control col-sm-6">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">CREATE PROJECT</button>
+                            <a href="{{ path_for('projects.index') }}" class="btn btn-default">Cancel</a>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <h3>{{ project.name }}</h3>
+                <p>Created: {{ project.created_at }}</p>
+            </div>
+            <div class="col-sm-8">
+
+                <div class="card">
+                    <div class="card-body">
+
+                        <form action="{{ path_for('projects.update', {id: project.id}) }}" method="POST">
+
+                            <input type="hidden" name="_METHOD" value="PATCH">
+
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <textarea name="description" id="description" rows="10"
+                                          class="form-control">{{ project.description }}</textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" name="name" id="name" value="{{ project.name }}"
+                                       class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="starts_at">Starts at</label>
+                                <input type="text" name="starts_at" id="starts_at" value="{{ project.starts_at }}"
+                                       class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ends_at">Deadline</label>
+                                <input type="text" name="ends_at" id="ends_at" value="{{ project.ends_at }}"
+                                       class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="income_expected">Target income</label>
+                                <input type="number" name="income_expected" id="income_expected"
+                                       value="{{ project.income_expected }}" class="form-control">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">UPDATE PROJECT</button>
+                            <a href="{{ path_for('projects.index') }}" class="btn btn-default">Cancel</a>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -5,21 +5,36 @@
         <div class="row">
             <div class="col-sm-12">
 
-                <h1>Projects</h1>
+                <div class="card">
+                    <div class="card-header">
+                        Projects <a href="{{ path_for('projects.create') }}" class="btn btn-primary float-right">Add
+                            Project</a>
+                    </div>
+                    <div class="card-body">
 
-                <table class="table">
-                    {% for project in projects %}
-                        <tr>
-                            <td>
-                                <a href="{{ path_for('projects.show', {id: project.id}) }}">
-                                    {{ project.name }}
-                                </a>
-                            </td>
-                        </tr>
-                    {% endfor %}
-                </table>
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th class="text-right">SN</th>
+                                <th>Name</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for project in projects %}
+                                <tr>
+                                    <td class="text-right">{{ project.id }}.</td>
+                                    <td>
+                                        <a href="{{ path_for('projects.show', {id: project.id}) }}">
+                                            {{ project.name }}
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
 
-                <a href="#" class="btn btn-primary">Add Project</a>
+                    </div>
+                </div>
 
             </div>
         </div>
