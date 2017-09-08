@@ -1,0 +1,25 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                <h1>Projects</h1>
+
+                <table class="table">
+                    {% for project in projects %}
+                        <tr>
+                            <td>
+                                {{ project.name }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+
+                <a href="#" class="btn btn-primary">Add Project</a>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use App\Models\Project;
 use Interop\Container\ContainerInterface;
 use Slim\Views\Twig;
 use function DI\get;
@@ -21,5 +22,8 @@ return [
     },
     User::class => function (ContainerInterface $c) {
         return new User;
+    },
+    Project::class => function (ContainerInterface $c) {
+        return new Project;
     }
 ];

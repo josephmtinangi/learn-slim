@@ -9,7 +9,7 @@ use Slim\Views\Twig;
 
 class HomeController
 {
-    public function index(Request $request, Response $response, Twig $view, User $user)
+    public function index(Request $request, Response $response, Twig $view)
     {
         $users = User::get();
 
