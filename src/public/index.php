@@ -15,6 +15,8 @@ $config['db']['dbname'] = 'lean_slim';
 
 $app = new Slim\App(['settings' => $config]);
 
+$container = $app->getContainer();
+
 $app->get('/', function (Request $request, Response $response, $args) {
     return $response->write("Hello");
 });
