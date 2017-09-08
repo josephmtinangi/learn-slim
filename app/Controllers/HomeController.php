@@ -11,10 +11,10 @@ class HomeController
 {
     public function index(Request $request, Response $response, Twig $view, User $user)
     {
-        $users = User::all();
-        var_dump($users);
-        die();
+        $users = User::get();
 
-        return $view->render($response, 'home.twig');
+        return $view->render($response, 'home.twig', [
+            'users' => $users,
+        ]);
     }
 }

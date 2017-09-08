@@ -15,9 +15,16 @@ class UsersTableSeeder extends AbstractSeed
      */
     public function run()
     {
-        $data = [
-            ['name' => 'Joseph Mtinangi', 'email' => 'josephmtinangi@gmail.com', 'password' => md5('secret')],
-        ];
+        $faker = Faker\Factory::create();
+        $data = [];
+
+        for ($i = 0; $i < 100; $i++) {
+            $data[] = [
+                'name' => $faker->name,
+                'email' => $faker->freeEmail,
+                'password' => md5('secret'),
+            ];
+        }
 
         $users = $this->table('users');
         $users->insert($data)
