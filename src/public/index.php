@@ -5,7 +5,15 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 require '../../vendor/autoload.php';
 
-$app = new Slim\App();
+$config['displayErrorDetails'] = true;
+$config['addContentLengthHeader'] = false;
+
+$config['db']['host'] = 'localhost';
+$config['db']['user'] = 'user';
+$config['db']['pass'] = 'password';
+$config['db']['dbname'] = 'lean_slim';
+
+$app = new Slim\App(['settings' => $config]);
 
 $app->get('/', function (Request $request, Response $response, $args) {
     return $response->write("Hello");
