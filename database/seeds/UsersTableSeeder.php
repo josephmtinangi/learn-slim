@@ -18,6 +18,7 @@ class UsersTableSeeder extends AbstractSeed
         $faker = Faker\Factory::create();
         $data = [];
 
+        $this->execute('DELETE FROM users');
         for ($i = 0; $i < 100; $i++) {
             $data[] = [
                 'name' => $faker->name,

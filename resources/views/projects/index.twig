@@ -11,7 +11,9 @@
                     {% for project in projects %}
                         <tr>
                             <td>
-                                {{ project.name }}
+                                <a href="{{ path_for('projects.show', {id: project.id}) }}">
+                                    {{ project.name }}
+                                </a>
                             </td>
                         </tr>
                     {% endfor %}

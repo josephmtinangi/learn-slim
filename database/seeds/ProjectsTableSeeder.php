@@ -17,10 +17,12 @@ class ProjectsTableSeeder extends AbstractSeed
         $faker = Faker\Factory::create();
         $data = [];
 
+        $this->execute('DELETE FROM projects');
+
         for ($i = 0; $i < 5; $i++) {
             $data[] = [
-                'name' => $faker->name,
-                'description' => $faker->freeEmail,
+                'name' => $faker->sentence,
+                'description' => $faker->paragraph,
                 'user_id' => 1,
             ];
         }
