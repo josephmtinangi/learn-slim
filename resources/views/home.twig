@@ -4,17 +4,7 @@
 
     <div class="container">
         <h1>Home</h1>
-        <div class="row">
-            {% for index, user in users %}
-                <div class="col-md-4 col-sm-6">
-                    {% include 'users/partials/user.twig' with {user: user} %}
-                </div>
-                {% if (index + 1) % 3 == 0 %}
-                    </div>
-                    <div class="row">
-                {% endif %}
-            {% endfor %}
-        </div>
+
     </div>
 
 {% endblock %}
